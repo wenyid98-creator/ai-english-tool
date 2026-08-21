@@ -1,17 +1,14 @@
-age = int(input("How old are you? "))
+print("=== AI English Learning Tool V0.2 ===")
 
-if age < 18:
-    print("You are a minor.")
-           
-    
-elif age >=18 and age <=24:
-        print("You are a young adult.")
-elif age>=25 and age <=59:
-        print("You are an adult.")
-else:
-        print("You are a senior.")
-        
-    
+text = input("Enter an English sentence: ")
 
+words = text.split()
 
-    
+print()
+print("Your words are:")
+
+for word in words:
+    print("-", word)
+
+print()
+print("Total words:", len(words))
