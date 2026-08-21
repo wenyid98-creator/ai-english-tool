@@ -1,10 +1,17 @@
-print("===AI English Learning Tool===")
+age = int(input("How old are you? "))
 
-text = input("Enter a sentence in English: ")
+if age < 18:
+    print("You are a minor.")
+           
+    
+elif age >=18 and age <=24:
+        print("You are a young adult.")
+elif age>=25 and age <=59:
+        print("You are an adult.")
+else:
+        print("You are a senior.")
+        
+    
 
-print()
-print("You sentence is:")
-print(text)
 
-print()
-print("Vocabulary analysis will be added soon.")
+    
