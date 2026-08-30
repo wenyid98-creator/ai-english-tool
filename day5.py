@@ -50,5 +50,6 @@ while True:
     )
 
     print("\n=== AI 分析结果 ===")
-    print(response.choices[0].message.content)
+    answer = response.choices[0].message.content
+    print(answer)
     print()
