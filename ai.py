@@ -103,15 +103,24 @@ level:
 英文：
 """
 def get_ai_response(text):
-    response = client.chat.completions.create(
-        model="deepseek-chat",
-        messages=[
-            {
-                "role":"user",
-                "content":PROMPT_HEAD + text
-            }
-        ],
-    )
-
-    answer = response.choices[0].message.content
-    return json.loads(answer)
+    
+    try:
+        
+        response = client.chat.completions.create(
+                model="deepseek-chat",
+                messages=[
+                    {
+                        "role":"user",
+                        "content":PROMPT_HEAD + text
+                    }
+                ],
+            )
+        
+        answer = response.choices[0].message.content
+        return json.loads(answer)
+    except json.JSONDecodeError:
+        print("AI 返回的数据不是合法 JSON")
+        return None
+    except Exception:
+        print("API 请求发生错误")
+        return None
